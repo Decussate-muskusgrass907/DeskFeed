@@ -1,0 +1,52 @@
+# Secrets / credentials
+.env
+credentials.json
+config.json
+firebase-service-account.json
+*.pem
+*.key
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+agent_*.log
+
+# Flutter
+.dart_tool/
+.flutter-plugins-dependencies
+.metadata
+*.iml
+.artifacts/
+/build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# Databases
+*.db
+*.db-journal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Downloaded binaries
+ngrok/
+deskfeed_controller.exe
+
+# Temp / misc
+test_stream.py
+Command.txt

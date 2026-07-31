@@ -1,0 +1,27 @@
+name: deskfeed_mobile
+description: DeskFeed Mobile - Multi-device monitoring viewer
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  web_socket_channel: ^2.4.0
+  provider: ^6.1.1
+  firebase_core: ^2.24.2
+  firebase_messaging: ^14.7.10
+  flutter_local_notifications: ^17.0.0
+  http: ^1.1.2
+  shared_preferences: ^2.2.2
+  permission_handler: ^11.2.0
+  flutter_sound: ^9.28.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1014397895880",
+    "project_id": "deskfeed-8f8df",
+    "storage_bucket": "deskfeed-8f8df.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014397895880:android:2ec3572b3569a58cf0d1fd",
+        "android_client_info": {
+          "package_name": "com.deskfeed.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2tYtsNxkFMl2hEuWIPT0XJ-G-ThtWNRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
