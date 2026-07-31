@@ -1,5 +1,8 @@
 # 📡 DeskFeed
 
+[![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
+[![CodeQL](https://github.com/malik-cat/DeskFeed/actions/workflows/codeql.yml/badge.svg)](https://github.com/malik-cat/DeskFeed/actions/workflows/codeql.yml)
+
 **Real-time Windows activity monitoring, remote live viewing, and instant email alerts — all accessible from your Android phone.**
 
 DeskFeed is an end-to-end remote monitoring system that runs on your Windows PC and streams live activity to a mobile app. It tracks foreground applications, browser URLs, and file explorer paths; watches Outlook for incoming mail; captures your screen, webcam, and microphone on demand; and delivers it all to your phone over WebSocket — locally on your network or remotely through an ngrok tunnel.
@@ -265,6 +268,42 @@ To build a standalone EXE, run `build.bat` (requires PyInstaller).
 **Mohammad Liaquat Ali** — developer and maintainer of DeskFeed.
 
 [GitHub](https://github.com/malik-cat) · [Project Repository](https://github.com/malik-cat/DeskFeed)
+
+---
+
+## 🔐 Supply-Chain Security (SLSA)
+
+DeskFeed is built with **SLSA Level 3** provenance using the [slsa-github-generator](https://github.com/slsa-framework/slsa-github-generator):
+
+| Security control | What it does |
+|------------------|--------------|
+| **Signed provenance** | Each release (tag `v*`) generates an SLSA provenance file signed with a short-lived key derived from the GitHub OIDC token — proving *what* built the artifact and *where it came from* |
+| **Controlled builds** | Artifacts are built in ephemeral, isolated GitHub Actions runners with least-privilege permissions |
+| **CodeQL** | Continuous static analysis of JavaScript/TypeScript and Python on every push and PR |
+| **Dependabot** | Weekly dependency-update PRs for npm, pip, pub, and GitHub Actions |
+| **Security policy** | Vulnerability reporting via private GitHub Security Advisories — see [SECURITY.md](.github/SECURITY.md) |
+
+### Releasing a new version
+
+Push a version tag and the `release.yml` workflow builds the backend package and agent archive, attaches them to a GitHub Release, and generates the SLSA provenance:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+### Verifying release artifacts
+
+Verify the provenance of a release artifact with `slsa-verifier`:
+
+```bash
+# Download the artifact + its .intoto.jsonl provenance from the Release page
+slsa-verifier verify-artifact \
+  --provenance-path artifact.intoto.jsonl \
+  --source-uri github.com/malik-cat/DeskFeed \
+  --source-tag v1.0.0 \
+  artifact
+```
 
 ---
 
