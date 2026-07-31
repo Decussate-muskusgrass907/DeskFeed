@@ -256,6 +256,14 @@ To build a standalone EXE, run `build.bat` (requires PyInstaller).
 
 ---
 
+## 👤 Author
+
+**Mohammad Liaquat Ali** — developer and maintainer of DeskFeed.
+
+[GitHub](https://github.com/malik-cat) · [Project Repository](https://github.com/malik-cat/DeskFeed)
+
+---
+
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE). Copyright © 2026 Mohammad Liaquat Ali.

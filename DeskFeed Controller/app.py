@@ -129,6 +129,8 @@ class App(ctk.CTk):
         header.grid_columnconfigure(1, weight=1)
         ctk.CTkLabel(header, text="DeskFeed Controller",
                      font=ctk.CTkFont(size=22, weight="bold")).grid(row=0, column=0, sticky="w")
+        ctk.CTkLabel(header, text="by Mohammad Liaquat Ali",
+                     font=ctk.CTkFont(size=11), text_color="#888").grid(row=1, column=0, sticky="w")
         self.status_badge = ctk.CTkLabel(header, text=" ● Stopped ",
                                           font=ctk.CTkFont(size=12),
                                           fg_color="#3d1a1a", text_color="#e74c3c", corner_radius=8)

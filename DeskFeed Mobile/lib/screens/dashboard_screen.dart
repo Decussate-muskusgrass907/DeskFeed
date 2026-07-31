@@ -62,11 +62,24 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ],
       ),
-      body: IndexedStack(
-        index: _tab,
+      body: Column(
         children: [
-          _buildActivity(ws),
-          _buildEmail(ws),
+          Expanded(
+            child: IndexedStack(
+              index: _tab,
+              children: [
+                _buildActivity(ws),
+                _buildEmail(ws),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 4),
+            child: Text(
+              'DeskFeed by Mohammad Liaquat Ali',
+              style: TextStyle(fontSize: 11, color: Colors.grey.shade600),
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
