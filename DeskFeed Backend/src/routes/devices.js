@@ -4,9 +4,18 @@ const { prisma } = require('../services/database');
 const { authenticate } = require('../middleware/auth');
 const logger = require('../services/logger');
 
+function assertOwnership(req, res) {
+  if (req.user.deviceId !== req.params.deviceId) {
+    res.status(403).json({ error: 'Forbidden' });
+    return false;
+  }
+  return true;
+}
+
 // Get device info
 router.get('/:deviceId', authenticate, async (req, res) => {
   try {
+    if (!assertOwnership(req, res)) return;
     const device = await prisma.device.findUnique({
       where: { id: req.params.deviceId },
       select: {
@@ -31,6 +40,7 @@ router.get('/:deviceId', authenticate, async (req, res) => {
 // Get activity logs
 router.get('/:deviceId/logs', authenticate, async (req, res) => {
   try {
+    if (!assertOwnership(req, res)) return;
     const limit = Math.min(parseInt(req.query.limit) || 100, 500);
     const logs = await prisma.activityLog.findMany({
       where: { deviceId: req.params.deviceId },
@@ -48,6 +58,7 @@ router.get('/:deviceId/logs', authenticate, async (req, res) => {
 // Get email alerts
 router.get('/:deviceId/emails', authenticate, async (req, res) => {
   try {
+    if (!assertOwnership(req, res)) return;
     const limit = Math.min(parseInt(req.query.limit) || 50, 200);
     const alerts = await prisma.emailAlert.findMany({
       where: { deviceId: req.params.deviceId },

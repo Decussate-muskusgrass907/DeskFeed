@@ -8,6 +8,7 @@ WS_URL = os.getenv('WS_URL', 'ws://localhost:3000')
 DEVICE_NAME = os.getenv('DEVICE_NAME', 'My-Work-Laptop')
 DEVICE_ID = os.getenv('DEVICE_ID', '')
 AUTH_TOKEN = os.getenv('AUTH_TOKEN', '')
+CRYPTO_SECRET = os.getenv('CRYPTO_SECRET', '')
 ACTIVITY_INTERVAL = int(os.getenv('ACTIVITY_INTERVAL', '5'))
 
 ENABLE_WEBCAM = os.getenv('ENABLE_WEBCAM', 'true').lower() == 'true'

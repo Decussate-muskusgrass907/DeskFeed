@@ -240,6 +240,10 @@ To build a standalone EXE, run `build.bat` (requires PyInstaller).
 - Change the default `JWT_SECRET` in the backend `.env` before deploying.
 - Run the backend behind HTTPS in production (reverse proxy or ngrok).
 - The agent's audio/video streaming is on-demand only — the stream stops when the viewer disconnects or sends `stream:stop`.
+- Set a random `CRYPTO_SECRET` in the agent's `.env` — it is used to derive the AES encryption key.
+- Pairing PINs expire after **10 minutes**, and repeated failed PIN attempts are **rate-limited** (5 per 5 minutes).
+- Device data endpoints verify that the caller owns the device (JWT `deviceId` must match the URL).
+- Stream requests are forwarded only to the paired agent's room, never broadcast to all agents.
 
 ---
 

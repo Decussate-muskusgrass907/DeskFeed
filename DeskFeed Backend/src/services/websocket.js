@@ -53,7 +53,7 @@ function setupWebSocketHandlers(io) {
             browserUrl: data.browserUrl || null,
             folderPath: data.folderPath || null,
             windowTitle: data.windowTitle || null,
-            timestamp: new Date(data.timestamp) || new Date(),
+            timestamp: data.timestamp ? new Date(data.timestamp) : new Date(),
           },
         });
 
@@ -76,7 +76,7 @@ function setupWebSocketHandlers(io) {
             deviceId,
             subject: data.subject,
             sender: data.sender,
-            receivedAt: new Date(data.timestamp) || new Date(),
+            receivedAt: data.timestamp ? new Date(data.timestamp) : new Date(),
           },
         });
 

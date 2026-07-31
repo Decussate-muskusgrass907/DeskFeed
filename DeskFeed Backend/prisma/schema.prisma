@@ -8,14 +8,15 @@ datasource db {
 }
 
 model Device {
-  id          String   @id @default(uuid())
-  name        String
-  pairingPin  String   @unique
-  isPaired    Boolean  @default(false)
-  fcmToken    String?
-  lastSeen    DateTime @default(now())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                  String    @id @default(uuid())
+  name                String
+  pairingPin          String    @unique
+  pairingPinExpiresAt DateTime?
+  isPaired            Boolean   @default(false)
+  fcmToken            String?
+  lastSeen            DateTime  @default(now())
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
 
   activityLogs   ActivityLog[]
   emailAlerts    EmailAlert[]

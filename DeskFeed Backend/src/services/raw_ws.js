@@ -83,8 +83,7 @@ function setupRawWebSocket(server, io) {
               const ns = io.of('/agent');
               logger.info(`Agent namespace sockets: ${ns.sockets.size}`);
               ns.to(`device:${decoded.deviceId}`).emit(type);
-              io.of('/agent').emit(type);
-              logger.info(`Forwarded ${type} (broadcast + room)`);
+              logger.info(`Forwarded ${type} (room)`);
             }
           }
         } catch (e) {
